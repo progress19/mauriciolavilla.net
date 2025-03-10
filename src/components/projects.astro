@@ -16,6 +16,8 @@ import aljibe from "../../public/proyectos/aljibe.png";
 import kintun from "../../public/proyectos/kintun.png"; 
 import emaweb from "../../public/proyectos/emaweb.png"; 
 import vll from "../../public/proyectos/vll1.png"; 
+import tsba from "../../public/proyectos/tsba.png"; 
+import ast from "../../public/proyectos/ast.png"; 
 
 interface Project {
   title: string;
@@ -26,6 +28,20 @@ interface Project {
 }
 
 const projects: Project[] = [
+  {
+    title: "Aparts San Telmo",
+    image: ast as ImageMetadata,
+    link: "",
+    preview: "https://apartssantelmo.com/new/es",
+    status: "",
+  }, 
+  {
+    title: "Tango Show Buenos Aires",
+    image: tsba as ImageMetadata,
+    link: "",
+    preview: "https://tangoshowba.com/",
+    status: "",
+  }, 
   {
     title: "Las Leñas - Pistas",
     image: vll as ImageMetadata,
@@ -158,7 +174,7 @@ const projects: Project[] = [
 const randomizedProjects = [...projects].sort(() => Math.random() - 0.5);
 ---
 
-<section id="projects" class="py-12 border-t border-[#ffffff10] text-[var(--white)]">
+<section id="projects" class="py-10 border-t border-[#ffffff10] text-[var(--white)]">
   <div class="max-w-5xl mx-auto">
     
     <h3 class="text-4xl md:text-5xl font-medium mb-10">Proyectos</h3>
@@ -195,11 +211,11 @@ const randomizedProjects = [...projects].sort(() => Math.random() - 0.5);
     </div>
     <a
       target="_blank"
-      href="https://github.com/Gothsec?tab=repositories"
+      href="https://github.com/progress19"
       aria-label="GitHub"
       class="w-full flex items-center justify-center gap-2 mt-9 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-full bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
     >
-      <span class="md:text-lg text-md">More projects on</span>
+      <span class="md:text-lg text-md">Más proyectos en</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
