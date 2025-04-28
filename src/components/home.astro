@@ -4,40 +4,31 @@ import LogoWall from "../components/logoWall.astro";
 import SkillsList from "../React/SkillsList.tsx";
 ---
 
-<section class="text-[var(--white)] mt-12 md:mt-20" id="home">
-  <div class="max-w-5xl mx-auto space-y-8 md:pb-6 pb-4">
+<section class="text-[var(--white)] mt-12 md:mt-0" id="home">
+  <div class="max-w-5xl mx-auto space-y-8 md:py-36 pb-14">
     <div class="text-left">
       <p class="text-md md:text-2xl text-[var(--white-icon)] shiny-white">
         Mauricio Lavilla
       </p>
-      <div
-        class="flex flex-col lg:flex-row lg:items-center lg:space-y-0 lg:space-x-8 md:gap-4"
-      >
-        <h1
-          class="text-[var(--white)] text-5xl md:text-6xl font-medium text-pretty leading-none mb-5"
-        >
-          Desarrollador <br /> Full Stack
+      <div class="flex flex-col lg:flex-row lg:items-center lg:space-y-0 lg:space-x-8 md:gap-4">
+        <h1 class="text-[var(--white)] text-5xl md:text-6xl font-medium text-pretty leading-none">
+          Full Stack <br /> Developer
         </h1>
-
+        
         <div class="flex flex-col space-y-4">
           <p class="text-md md:text-2 md:text-xl text-[var(--white-icon)]">
-            Transformo ideas en sistemas inteligentes y escalables, fusionando
-            diseño moderno con arquitecturas robustas para crear soluciones
-            digitales que marcan la diferencia.
+            Transformo ideas en sistemas inteligentes y escalables, fusionando diseño moderno con arquitecturas robustas para crear soluciones digitales que marcan la diferencia. 
           </p>
           <p class="text-md md:text-xl text-[var(--white-icon)]">
-            Soy un apasionado por la tecnología y la innovación, siempre en
-            busca de nuevos retos y oportunidades para crecer.
+            Soy un apasionado por la tecnología y la innovación, siempre en busca de nuevos retos y oportunidades para crecer.
           </p>
         </div>
       </div>
       <div class="flex justify-start gap-2 pt-3 md:pt-6">
-        <a
-          target="_blank"
+        <a target="_blank"
           href="https://github.com/progress19"
           aria-label="GitHub"
-          class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
-        >
+          class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]" >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -88,10 +79,12 @@ import SkillsList from "../React/SkillsList.tsx";
     </div>
 
     <LogoWall />
-   
+
     <div class="flex flex-col lg:flex-row items-center gap-8">
       <SkillsList client:load />
-      <div class="flex justify-center md:w-full md:h-[320px] size-[290px] pt-3 md:pt-9 md:ml-16 mb-10">
+      <div
+        class="flex justify-center md:w-full md:h-[320px] size-[290px] pt-3 md:pt-9 md:ml-16"
+      >
         <LetterGlitch
           client:only
           glitchColors={["#5e4491", "#A476FF", "#241a38"]}
@@ -102,7 +95,6 @@ import SkillsList from "../React/SkillsList.tsx";
         />
       </div>
     </div>
-
   </div>
 </section>
 

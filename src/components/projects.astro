@@ -1,23 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import lmc from "../../public/proyectos/lmc.png";
-import saintjoseph from "../../public/proyectos/saintjoseph.png";
-import laventana from "../../public/proyectos/laventana.png";
-import fly from "../../public/proyectos/fly.png";
-import cruisetech from "../../public/proyectos/cruisetech.svg";
-import euca from "../../public/proyectos/euca.png";
-import aparts_p from "../../public/proyectos/aparts_p.png"; 
-import eventos from "../../public/proyectos/eventos-bsas.svg"; 
-import sport from "../../public/proyectos/sport.png"; 
-import raices from "../../public/proyectos/raices.png"; 
-import ma from "../../public/proyectos/ma.png"; 
-import gala from "../../public/proyectos/gala.png"; 
-import aljibe from "../../public/proyectos/aljibe.png"; 
-import kintun from "../../public/proyectos/kintun.png"; 
-import emaweb from "../../public/proyectos/emaweb.png"; 
-import vll from "../../public/proyectos/vll1.png"; 
-import tsba from "../../public/proyectos/tsba.png"; 
-import ast from "../../public/proyectos/ast.png"; 
+import svgl from "../../public/svgl.png";
+import stockin from "../../public/stockin.png";
 
 interface Project {
   title: string;
@@ -29,179 +13,85 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Aparts San Telmo",
-    image: ast as ImageMetadata,
-    link: "",
-    preview: "https://apartssantelmo.com/new/es",
-    status: "",
-  }, 
-  {
-    title: "Tango Show Buenos Aires",
-    image: tsba as ImageMetadata,
-    link: "",
-    preview: "https://tangoshowba.com/",
-    status: "",
-  }, 
-  {
-    title: "Las Leñas - Pistas",
-    image: vll as ImageMetadata,
-    link: "",
-    preview: "https://sistemas.laslenas.com",
-    status: "",
-  },  
-  {
-    title: "Las Leñas - Intranet",
-    image: vll as ImageMetadata,
-    link: "",
-    preview: "https://sistemas.laslenas.com",
-    status: "",
-  },  
-  {
-    title: "Las Leñas - Compras",
-    image: vll as ImageMetadata,
-    link: "",
-    preview: "https://sistemas.laslenas.com",
-    status: "",
-  },  
-  {
-    title: "EmaWeb",
-    image: emaweb as ImageMetadata,
-    link: "",
-    preview: "https://emaweb.com.ar",
-    status: "",
-  },  
-  {
-    title: "Kintun",
-    image: kintun as ImageMetadata,
-    link: "",
-    preview: "https://kintun.com",
-    status: "",
-  },  
-  {
-    title: "Aljibe Tango",
-    image: aljibe as ImageMetadata,
-    link: "",
-    preview: "https://aljibetango.com",
-    status: "",
-  },  
-  {
-    title: "Gala Tango",
-    image: gala as ImageMetadata,
-    link: "",
-    preview: "https://www.galatango.com",
-    status: "",
-  },  
-  {
-    title: "Michelangelo",
-    image: ma as ImageMetadata,
-    link: "",
-    preview: "https://michelangeloweb.com",
-    status: "",
-  },  
-  {
-    title: "Complejo Raíces",
-    image: raices as ImageMetadata,
-    link: "",
-    preview: "https://complejoraices.com.ar/",
-    status: "",
-  },  
-  {
-    title: "Sport Works",
-    image: sport as ImageMetadata,
-    link: "",
-    preview: "http://sportworks.com.ar",
-    status: "",
+    title: "StockIn",
+    image: stockin as ImageMetadata,
+    link: "https://github.com/gothsec/stockin-demo",
+    preview: "https://stockin-demo.vercel.app",
+    status: "In Development",
   },
   {
-    title: "Eventos Buenos Aires",
-    image: eventos as ImageMetadata,
-    link: "",
-    preview: "https://eventosbsas.com/",
-    status: "",
-  },
-  {
-    title: "Aparts Palermo",
-    image: aparts_p as ImageMetadata,
-    link: "",
-    preview: "http://apartspalermo.com.ar",
-    status: "",
-  },
-  {
-    title: "Euca Tigre",
-    image: euca as ImageMetadata,
-    link: "",
-    preview: "https://tienda.eucatigre.com/",
-    status: "",
-  },
-  {
-    title: "LastMinuteCruises",
-    image: lmc as ImageMetadata,
-    link: "https://lastminutecruises.us/",
-    preview: "https://lastminutecruises.us/",
-    status: "",
-  },
-  {
-    title: "SaintJoseph",
-    image: saintjoseph as ImageMetadata,
-    link: "",
-    preview: "https://www.saintjosephweb.com.ar/",
-    status: "",
-  },
-  {
-    title: "La Ventana",
-    image: laventana as ImageMetadata,
-    link: "",
-    preview: "https://www.laventanaweb.com/en",
-    status: "",
-  },
-  {
-    title: "Fly Parque Aéreo",
-    image: fly as ImageMetadata,
-    link: "",
-    preview: "https://www.laventanaweb.com/en",
-    status: "",
-  },
-  {
-    title: "Cruisetech",
-    image: cruisetech as ImageMetadata,
-    link: "",
-    preview: "http://www.cruisetech.net/",
-    status: "",
+    title: "Svgl.app",
+    image: svgl as ImageMetadata,
+    link: "https://github.com/pheralb/svgl",
+    preview: "https://svgl.app",
+    status: "Contributor",
   },
 ];
-
-
-const randomizedProjects = [...projects].sort(() => Math.random() - 0.5);
 ---
 
-<section id="projects" class="py-10 border-t border-[#ffffff10] text-[var(--white)]">
+<section
+  id="projects"
+  class="py-12 border-t border-[#ffffff10] text-[var(--white)]"
+>
   <div class="max-w-5xl mx-auto">
-    
-    <h3 class="text-4xl md:text-5xl font-medium mb-10">Proyectos</h3>
+    <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">My work</h2>
+    <h3 class="text-4xl md:text-5xl font-medium mb-8">Projects</h3>
 
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {
-        randomizedProjects.map((project) => (
+        projects.map((project) => (
           <div class="group">
-            <a href={project.preview}
+            <a
+              href={project.preview}
               target="_blank"
               rel="noopener noreferrer"
-              class="block">
-              <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4 h-[74px] flex items-center justify-center bg-[#1414149c] relative">
-                <div class="absolute inset-0 bg-gradient-to-r from-[#1414149c] to-[#2a2a2a] animate-pulse skeleton"></div>
+              class="block"
+            >
+              <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4">
                 <Image
                   src={project.image}
                   alt={project.title}
-                  class="w-auto h-auto max-w-[80%] max-h-[80%] object-contain group-hover:scale-105 transition-all duration-300 relative z-10 project-image"
-                  loading="eager"
+                  class="w-full h-48 md:h-72 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div class="flex items-center px-3">
-                <div class="flex-grow text-center">
-                  <h4 class="text-sm font-semibolda">{project.title}</h4>
+                <div class="flex-grow">
+                  <h4 class="text-2xl font-semibold">{project.title}</h4>
                   <span class="py-1 text-sm text-[var(--white-icon)]">
                     {project.status}
                   </span>
+                </div>
+                <div class="flex gap-2 ml-auto">
+                  <a
+                    target="_blank"
+                    href={project.link}
+                    aria-label="GitHub"
+                    class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-7"
+                    >
+                      <path d="M24 12L18.3431 17.6569L16.9289 16.2426L21.1716 12L16.9289 7.75736L18.3431 6.34315L24 12ZM2.82843 12L7.07107 16.2426L5.65685 17.6569L0 12L5.65685 6.34315L7.07107 7.75736L2.82843 12ZM9.78845 21H7.66009L14.2116 3H16.3399L9.78845 21Z" />
+                    </svg>
+                  </a>
+                  <a
+                    target="_blank"
+                    href={project.preview}
+                    aria-label="Preview"
+                    class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-7"
+                    >
+                      <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
+                    </svg>
+                  </a>
                 </div>
               </div>
             </a>
@@ -211,11 +101,11 @@ const randomizedProjects = [...projects].sort(() => Math.random() - 0.5);
     </div>
     <a
       target="_blank"
-      href="https://github.com/progress19"
+      href="https://github.com/Gothsec?tab=repositories"
       aria-label="GitHub"
       class="w-full flex items-center justify-center gap-2 mt-9 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-full bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
     >
-      <span class="md:text-lg text-md">Más proyectos en</span>
+      <span class="md:text-lg text-md">More projects on</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -229,74 +119,3 @@ const randomizedProjects = [...projects].sort(() => Math.random() - 0.5);
     </a>
   </div>
 </section>
-
-<style>
-  .skeleton {
-    background-size: 200% 100%;
-    background-image: linear-gradient(
-      110deg,
-      #1414149c 25%,
-      rgba(129, 129, 129, 0.1) 45%,
-      #1414149c 65%
-    );
-    animation: shimmer 2s infinite linear;
-  }
-
-  @keyframes shimmer {
-    0% {
-      background-position: -200% 0;
-    }
-    100% {
-      background-position: 200% 0;
-    }
-  }
-
-  .project-image {
-    opacity: 0;
-    transition: opacity 0.6s ease-in-out;
-  }
-
-  .project-image.loaded {
-    opacity: 1;
-  }
-</style>
-
-<script>
-  function handleImages() {
-    const images = document.querySelectorAll('.project-image');
-    const skeletons = document.querySelectorAll('.skeleton');
-
-    images.forEach((img, index) => {
-      if (img instanceof HTMLImageElement) {
-        // Calculamos un delay progresivo
-        const delay = (index + 1) * 300; // 800ms por cada imagen
-
-        setTimeout(() => {
-          if (img.complete) {
-            fadeInImage(img, skeletons[index]);
-          } else {
-            img.onload = () => fadeInImage(img, skeletons[index]);
-          }
-        }, delay);
-      }
-    });
-  }
-
-  function fadeInImage(img: HTMLImageElement, skeleton: Element | undefined) {
-    // Esperamos un poco más después del delay inicial para una transición más suave
-    setTimeout(() => {
-      img.classList.add('loaded');
-      skeleton?.classList.add('opacity-0');
-      
-      // Removemos el skeleton después de la transición
-      setTimeout(() => {
-        skeleton?.classList.add('hidden');
-      }, 600);
-    }, 200);
-  }
-
-  // Ejecutar cuando el DOM está listo
-  document.addEventListener('astro:page-load', handleImages);
-  // También ejecutar inmediatamente
-  handleImages();
-</script>
