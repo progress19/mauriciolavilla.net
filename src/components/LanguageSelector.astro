@@ -1,0 +1,226 @@
+---
+// Componente selector de idiomas
+---
+
+<div class="language-selector-container">
+  <div 
+    id="language-selector" 
+    class="relative inline-block text-left"
+  >
+    <!-- Botón del selector -->
+    <button
+      id="language-button"
+      type="button"
+      class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[var(--card-bg)] border border-[var(--white-icon-tr)] rounded-lg text-[var(--white-icon)] hover:text-[var(--white)] hover:bg-[var(--white-icon-tr)] transition-all duration-300 ease-in-out backdrop-blur-sm"
+      aria-expanded="false"
+      aria-haspopup="true"
+    >
+      <!-- Icono del idioma actual -->
+      <span id="current-language-flag" class="text-lg">🌐</span>
+      <span id="current-language-text" class="text-sm font-medium">ES</span>
+      
+      <!-- Icono de flecha -->
+      <svg 
+        id="language-arrow"
+        class="w-4 h-4 transition-transform duration-200 ease-in-out"
+        xmlns="http://www.w3.org/2000/svg" 
+        viewBox="0 0 20 20" 
+        fill="currentColor"
+      >
+        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+      </svg>
+    </button>
+
+    <!-- Menú desplegable -->
+    <div
+      id="language-menu"
+      class="absolute right-0 z-50 mt-2 w-40 origin-top-right rounded-lg bg-[var(--card-bg)] border border-[var(--white-icon-tr)] backdrop-blur-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none opacity-0 invisible transform scale-95 transition-all duration-200 ease-in-out"
+      role="menu"
+      aria-orientation="vertical"
+      aria-labelledby="language-button"
+    >
+      <div class="py-2" role="none">
+        <!-- Opción Español -->
+        <button
+          class="language-option group flex w-full items-center gap-3 px-4 py-2 text-sm text-[var(--white-icon)] hover:text-[var(--white)] hover:bg-[var(--white-icon-tr)] transition-all duration-200"
+          role="menuitem"
+          data-lang="es"
+          data-flag="🇦🇷"
+          data-name="Español"
+        >
+          <span class="text-lg">🇦🇷</span>
+          <span class="font-medium">Español</span>
+          <span class="ml-auto opacity-0 group-hover:opacity-100 text-[var(--sec)] transition-opacity duration-200">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+          </span>
+        </button>
+
+        <!-- Opción Inglés -->
+        <button
+          class="language-option group flex w-full items-center gap-3 px-4 py-2 text-sm text-[var(--white-icon)] hover:text-[var(--white)] hover:bg-[var(--white-icon-tr)] transition-all duration-200"
+          role="menuitem"
+          data-lang="en"
+          data-flag="🇺🇸"
+          data-name="English"
+        >
+          <span class="text-lg">🇺🇸</span>
+          <span class="font-medium">English</span>
+          <span class="ml-auto opacity-0 group-hover:opacity-100 text-[var(--sec)] transition-opacity duration-200">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .language-selector-container {
+    position: relative;
+    z-index: 60;
+  }
+
+  /* Animación para el menú desplegable */
+  .language-menu-open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: scale(1) !important;
+  }
+
+  /* Efecto de rotación para la flecha */
+  .language-arrow-rotated {
+    transform: rotate(180deg);
+  }
+
+  /* Indicador de idioma activo */
+  .language-option.active {
+    background-color: var(--white-icon-tr);
+    color: var(--white);
+  }
+
+  .language-option.active .ml-auto {
+    opacity: 1 !important;
+  }
+
+  /* Animación suave para hover */
+  .language-option:hover {
+    background-color: rgba(164, 118, 255, 0.1);
+  }
+
+  /* Efecto de glow sutil */
+  #language-selector:hover #language-button {
+    box-shadow: 0 0 15px rgba(164, 118, 255, 0.2);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const languageButton = document.getElementById('language-button');
+    const languageMenu = document.getElementById('language-menu');
+    const languageArrow = document.getElementById('language-arrow');
+    const currentLanguageFlag = document.getElementById('current-language-flag');
+    const currentLanguageText = document.getElementById('current-language-text');
+    const languageOptions = document.querySelectorAll('.language-option');
+
+    // Obtener idioma guardado o usar español por defecto
+    const savedLanguage = localStorage.getItem('selectedLanguage') || 'es';
+    
+    // Configurar idioma inicial
+    setCurrentLanguage(savedLanguage);
+
+    // Toggle del menú desplegable
+    languageButton?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = languageMenu?.classList.contains('language-menu-open');
+      
+      if (isOpen) {
+        closeLanguageMenu();
+      } else {
+        openLanguageMenu();
+      }
+    });
+
+    // Selección de idioma
+    languageOptions.forEach(option => {
+      option.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const lang = option.getAttribute('data-lang');
+        const flag = option.getAttribute('data-flag');
+        const name = option.getAttribute('data-name');
+        
+        if (lang && flag && name) {
+          // Actualizar UI
+          setCurrentLanguage(lang);
+          
+          // Guardar preferencia
+          localStorage.setItem('selectedLanguage', lang);
+          
+          // Aplicar traducción
+          applyLanguage(lang);
+          
+          // Cerrar menú
+          closeLanguageMenu();
+        }
+      });
+    });
+
+    // Cerrar menú al hacer click fuera
+    document.addEventListener('click', (e) => {
+      if (!document.getElementById('language-selector')?.contains(e.target as Node)) {
+        closeLanguageMenu();
+      }
+    });
+
+    // Cerrar menú con Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeLanguageMenu();
+      }
+    });
+
+    function openLanguageMenu() {
+      languageMenu?.classList.add('language-menu-open');
+      languageArrow?.classList.add('language-arrow-rotated');
+      languageButton?.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeLanguageMenu() {
+      languageMenu?.classList.remove('language-menu-open');
+      languageArrow?.classList.remove('language-arrow-rotated');
+      languageButton?.setAttribute('aria-expanded', 'false');
+    }
+
+    function setCurrentLanguage(lang: string) {
+      const option = document.querySelector(`[data-lang="${lang}"]`);
+      if (option) {
+        const flag = option.getAttribute('data-flag');
+        const code = lang.toUpperCase();
+        
+        if (currentLanguageFlag && flag) {
+          currentLanguageFlag.textContent = flag;
+        }
+        if (currentLanguageText) {
+          currentLanguageText.textContent = code;
+        }
+
+        // Actualizar estado activo
+        languageOptions.forEach(opt => opt.classList.remove('active'));
+        option.classList.add('active');
+      }
+    }
+
+    function applyLanguage(lang: string) {
+      // Disparar evento personalizado para que otros componentes se actualicen
+      window.dispatchEvent(new CustomEvent('languageChanged', { 
+        detail: { language: lang } 
+      }));
+    }
+
+    // Aplicar idioma inicial
+    applyLanguage(savedLanguage);
+  });
+</script>

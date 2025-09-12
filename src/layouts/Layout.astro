@@ -1,21 +1,109 @@
 ---
+import ScrollToTop from "../components/scrollToTop.astro";
+import { translations } from "../translations.ts";
+
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+
+// Datos estructurados para SEO
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mauricio Lavilla",
+  "jobTitle": "Desarrollador Full Stack",
+  "description": "Desarrollador Full Stack especializado en JavaScript, Python, React, Node.js y Laravel. Experto en desarrollo web, e-commerce, inteligencia artificial y DevOps.",
+  "url": "https://mauriciolavilla.net",
+  "sameAs": [
+    "https://github.com/progress19",
+    "https://www.linkedin.com/in/mauriciolavilla/"
+  ],
+  "knowsAbout": [
+    "Desarrollo Web Full Stack",
+    "JavaScript",
+    "Python",
+    "React",
+    "Node.js",
+    "Laravel",
+    "WordPress",
+    "E-commerce",
+    "Inteligencia Artificial",
+    "DevOps",
+    "AWS",
+    "Google Cloud"
+  ],
+  "offers": {
+    "@type": "Service",
+    "serviceType": "Desarrollo de Software",
+    "description": "Desarrollo de aplicaciones web, sitios web corporativos, e-commerce, sistemas de reservas y soluciones de inteligencia artificial"
+  }
+};
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Software Developer" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CWJ8KS2Y72" is:inline></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
+      gtag('config', 'G-CWJ8KS2Y72');
+    </script>
+    
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content="Mauricio Lavilla - Desarrollador Full Stack especializado en JavaScript, Python, React, Node.js y Laravel. Desarrollo sitios web, e-commerce, sistemas de reservas y soluciones de IA. Experto en WordPress, DevOps y cloud computing." />
+    <meta name="keywords" content="desarrollador full stack, programador javascript, desarrollador python, react developer, node.js, laravel, wordpress, e-commerce, tienda online, sistema de reservas, inteligencia artificial, chatbots, devops, aws, google cloud, desarrollador web, sitios web corporativos, landing pages, seo técnico, bases de datos mysql, postgresql, api rest, desarrollo frontend, backend, mauricio lavilla" />
+    <meta name="author" content="Mauricio Lavilla" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="language" content="Spanish" />
+    <meta name="geo.region" content="AR" />
+    <meta name="geo.country" content="Argentina" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mauriciolavilla.net/" />
+    <meta property="og:title" content="Mauricio Lavilla - Desarrollador Full Stack | JavaScript, Python, React, Laravel" />
+    <meta property="og:description" content="Desarrollo sitios web profesionales, e-commerce, sistemas de reservas y soluciones de inteligencia artificial. Especialista en React, Node.js, Laravel y DevOps." />
+    <meta property="og:image" content="https://mauriciolavilla.net/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Mauricio Lavilla - Desarrollador Full Stack" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://mauriciolavilla.net/" />
+    <meta property="twitter:title" content="Mauricio Lavilla - Desarrollador Full Stack | JavaScript, Python, React" />
+    <meta property="twitter:description" content="Desarrollo aplicaciones web modernas, e-commerce y soluciones de IA. Especialista en React, Node.js, Laravel y cloud computing." />
+    <meta property="twitter:image" content="https://mauriciolavilla.net/og-image.jpg" />
+    <meta property="twitter:creator" content="@mauriciolavilla" />
+    
+    <!-- Technical SEO -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#a476ff" />
+    <meta name="msapplication-TileColor" content="#a476ff" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mauriciolavilla.net/" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    
+    <!-- Preconnect para performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Font loading optimizado -->
     <link
       rel="preload"
       as="style"
@@ -25,7 +113,6 @@ const { title } = Astro.props;
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       media="print"
-      onload="this.media='all'"
     />
     <noscript>
       <link
@@ -33,21 +120,76 @@ const { title } = Astro.props;
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       />
     </noscript>
-
-    <title>{title}</title>
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} is:inline />
+    
+    <!-- Preload critical resources -->
+    <link rel="dns-prefetch" href="//mauriciolavilla.net" />
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json" />
   </head>
-  <body class="bg-[--background] md:px-48 lg:px-20 px-9">
+  
+  <body class="bg-[--background] md:px-48 lg:px-20 px-9 relative">
+    <!-- Cargar traducciones globalmente -->
+    <script is:inline define:vars={{ translations }}>
+      window.translations = translations;
+    </script>
+    
+    <!-- Capas de fondo para efecto parallax -->
+    <div id="parallax-container" class="fixed top-0 left-0 w-full h-full z-[-1] pointer-events-none">
+      <!-- Capa de fondo más lejana -->
+      <div id="parallax-layer-1" class="absolute top-0 left-0 w-full h-[120%] opacity-10"></div>
+      <!-- Capa intermedia -->
+      <div id="parallax-layer-2" class="absolute top-0 left-0 w-full h-[110%] opacity-15"></div>
+      <!-- Fondo interactivo (capa más cercana) -->
+      <div id="tech-background" class="absolute top-0 left-0 w-full h-full opacity-20"></div>
+    </div>
+    
     <slot />
+    
+    <!-- Admin Access Floating Button -->
+    <a
+      href="https://mauriciolavilla.net/admin/public/login"
+      target="_blank"
+      id="admin-access"
+      class="fixed bottom-4 right-4 md:bottom-6 md:left-6 w-12 h-12 bg-transparent rounded-full flex items-center justify-center text-[#00ff00] hover:bg-[#001100] transition-all duration-300 z-50 group"
+      title="Acceso"
+      aria-label="Acceso de administrador"
+    >
+      <span class="admin-pi-symbol">π</span>
+    </a>
+
+    
+    <!-- Scroll to top button -->
+    <ScrollToTop />
   </body>
 </html>
 
 <style is:global>
   :root {
+    /* Tema oscuro por defecto (para portfolio) */
     --background: #101010;
     --sec: #a476ff;
     --white: #dfdfdf;
     --white-icon: #f3f3f398;
     --white-icon-tr: #f3f3f310;
+    --card-bg: #181028;
+    --card-bg-alt: #2a1a3a;
+    --border-color: #ffffff10;
+  }
+
+  [data-theme="light"] {
+    /* Tema claro */
+    --background: #ffffff;
+    --sec: #6f4baf;
+    --white: #1a1a1a;
+    --white-icon: #555555;
+    --white-icon-tr: #55555515;
+    --card-bg: #f8f9fa;
+    --card-bg-alt: #e9ecef;
+    --border-color: #e0e0e0;
   }
 
   * {
@@ -91,4 +233,381 @@ const { title } = Astro.props;
     scrollbar-width: thin;
     scrollbar-color: var(--line) var(--container);
   }
+
+  /* Scroll suave mejorado */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Estilos para las capas de parallax */
+  #parallax-layer-1 {
+    background: radial-gradient(circle at 20% 80%, rgba(164, 118, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(164, 118, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(164, 118, 255, 0.05) 0%, transparent 50%);
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  #parallax-layer-2 {
+    background: linear-gradient(45deg, rgba(164, 118, 255, 0.03) 0%, transparent 50%, rgba(164, 118, 255, 0.06) 100%),
+                radial-gradient(circle at 60% 60%, rgba(220, 200, 255, 0.04) 0%, transparent 40%);
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Optimización de performance para el parallax */
+  #parallax-container * {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* Ocultar elementos animados en móviles */
+  @media (max-width: 768px) {
+    #parallax-container {
+      display: none !important;
+    }
+    
+    #tech-background {
+      display: none !important;
+    }
+    
+    /* Simplificar fondo para móviles */
+    body {
+      background: var(--background) !important;
+    }
+  }
+
+  /* Media query para dispositivos con capacidades limitadas */
+  @media (prefers-reduced-motion: reduce) {
+    #parallax-container,
+    #tech-background {
+      display: none !important;
+    }
+    
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  
+  /* Estilos para el botón de acceso administrativo */
+  .admin-pi-symbol {
+    font-size: 1rem;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.8);
+    letter-spacing: 1px;
+    animation: matrixGlow 2s ease-in-out infinite alternate;
+  }
+  
+  #admin-access:hover .admin-pi-symbol {
+    animation: matrixGlowIntense 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes matrixGlow {
+    0% {
+      text-shadow: 
+        0 0 5px rgba(0, 255, 0, 0.5),
+        0 0 10px rgba(0, 255, 0, 0.3),
+        0 0 15px rgba(0, 255, 0, 0.2);
+      transform: scale(1);
+    }
+    100% {
+      text-shadow: 
+        0 0 8px rgba(0, 255, 0, 0.8),
+        0 0 16px rgba(0, 255, 0, 0.6),
+        0 0 24px rgba(0, 255, 0, 0.4);
+      transform: scale(1.05);
+    }
+  }
+  
+  @keyframes matrixGlowIntense {
+    0% {
+      text-shadow: 
+        0 0 10px rgba(0, 255, 0, 1),
+        0 0 20px rgba(0, 255, 0, 0.8),
+        0 0 30px rgba(0, 255, 0, 0.6);
+      transform: scale(1.05);
+    }
+    100% {
+      text-shadow: 
+        0 0 15px rgba(0, 255, 0, 1),
+        0 0 30px rgba(0, 255, 0, 0.9),
+        0 0 45px rgba(0, 255, 0, 0.7);
+      transform: scale(1.1);
+    }
+  }
+  
+  #admin-access {
+    backdrop-filter: blur(5px);
+  }
+  
+  #admin-access:hover {
+    border-color: #00ff66;
+    box-shadow: 
+      0 0 20px rgba(0, 255, 0, 0.3),
+      inset 0 0 20px rgba(0, 255, 0, 0.1);
+  }
+
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Detectar dispositivos móviles al inicio
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+    
+    // Solo ejecutar animaciones en escritorio
+    if (!isMobile) {
+      const canvas = document.createElement('canvas');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      canvas.style.width = '100%';
+      canvas.style.height = '100%';
+      document.getElementById('tech-background')?.appendChild(canvas);
+
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        // Colores más brillantes que coinciden con la paleta del sitio
+        const primaryColor = '#b592ff'; // Color de nodos más brillante
+
+        // Configuración de nodos mejorada
+        const nodes: Array<{
+          x: number;
+          y: number;
+          vx: number;
+          vy: number;
+          size: number;
+        }> = [];
+        const nodeCount = Math.min(75, Math.floor(window.innerWidth / 35)); // Ligeramente más nodos
+        const nodeSize = 2; // Nodos más grandes
+        const nodeConnectionDistance = 170; // Distancia de conexión mayor
+        const nodeSpeed = 0.35; // Velocidad ligeramente mayor
+
+        // Crear nodos iniciales
+        for (let i = 0; i < nodeCount; i++) {
+          nodes.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            vx: (Math.random() - 0.5) * nodeSpeed,
+            vy: (Math.random() - 0.5) * nodeSpeed,
+            size: nodeSize + Math.random() * 0.5 // Tamaño variable para más dinamismo
+          });
+        }
+
+        // Función principal de animación
+        function animate() {
+          // Limpiar canvas
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+          // Actualizar y dibujar nodos
+          for (let i = 0; i < nodes.length; i++) {
+            const node = nodes[i];
+
+            // Mover nodo
+            node.x += node.vx;
+            node.y += node.vy;
+
+            // Rebotar en los bordes
+            if (node.x <= 0 || node.x >= canvas.width) node.vx *= -1;
+            if (node.y <= 0 || node.y >= canvas.height) node.vy *= -1;
+
+            // Dibujar nodo con brillo
+            ctx.fillStyle = primaryColor;
+            ctx.beginPath();
+            ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Añadir brillo/glow a los nodos
+            ctx.shadowColor = primaryColor;
+            ctx.shadowBlur = 5;
+            ctx.beginPath();
+            ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.shadowBlur = 0; // Resetear el brillo
+
+            // Conectar nodos cercanos
+            for (let j = i + 1; j < nodes.length; j++) {
+              const otherNode = nodes[j];
+              const dx = node.x - otherNode.x;
+              const dy = node.y - otherNode.y;
+              const distance = Math.sqrt(dx * dx + dy * dy);
+
+              if (distance < nodeConnectionDistance) {
+                // Calcular opacidad basada en la distancia
+                const opacity = 1 - (distance / nodeConnectionDistance);
+                
+                // Dibujar línea con color mucho más claro y mayor opacidad
+                ctx.strokeStyle = `rgba(220, 200, 255, ${opacity * 0.75})`;
+                ctx.lineWidth = 0.8;
+                ctx.beginPath();
+                ctx.moveTo(node.x, node.y);
+                ctx.lineTo(otherNode.x, otherNode.y);
+                ctx.stroke();
+              }
+            }
+          }
+
+          // Seguir animando
+          requestAnimationFrame(animate);
+        }
+
+        // Iniciar animación
+        animate();
+
+        // Ajustar canvas cuando cambia el tamaño de la ventana
+        window.addEventListener('resize', () => {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        });
+      }
+    }
+
+    // === EFECTO PARALLAX Y SCROLL SUAVE (Solo en escritorio) ===
+    
+    // Elementos para el efecto parallax
+    const parallaxLayer1 = document.getElementById('parallax-layer-1');
+    const parallaxLayer2 = document.getElementById('parallax-layer-2');
+    const techBackground = document.getElementById('tech-background');
+    
+    // Variables para el scroll suave
+    let isScrolling = false;
+    let scrollTimer: number;
+    
+    // Función de throttle para optimizar el rendimiento del scroll
+    function throttle(func: Function, limit: number) {
+      let inThrottle: boolean;
+      return function(this: any, ...args: any[]) {
+        if (!inThrottle) {
+          func.apply(this, args);
+          inThrottle = true;
+          setTimeout(() => inThrottle = false, limit);
+        }
+      }
+    }
+    
+    // Solo aplicar parallax en escritorio
+    function handleParallax() {
+      if (isMobile) return; // Salir si es móvil
+      
+      const scrollY = window.pageYOffset;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollProgress = scrollY / (documentHeight - windowHeight);
+      
+      // Aplicar diferentes velocidades de parallax a cada capa
+      if (parallaxLayer1) {
+        const speed1 = scrollY * 0.2; // Capa más lenta (más lejana)
+        parallaxLayer1.style.transform = `translate3d(0, ${speed1}px, 0)`;
+        
+        // Efecto de rotación sutil basado en el scroll
+        const rotation = scrollProgress * 2; // Rotación muy sutil
+        parallaxLayer1.style.transform += ` rotate(${rotation}deg)`;
+        
+        // Cambiar opacidad de las capas según el scroll
+        const opacity1 = Math.max(0.05, 0.1 - scrollProgress * 0.05);
+        parallaxLayer1.style.opacity = opacity1.toString();
+      }
+      
+      if (parallaxLayer2) {
+        const speed2 = scrollY * 0.4; // Capa intermedia
+        parallaxLayer2.style.transform = `translate3d(0, ${speed2}px, 0)`;
+        
+        const opacity2 = Math.max(0.1, 0.15 - scrollProgress * 0.08);
+        parallaxLayer2.style.opacity = opacity2.toString();
+      }
+      
+      if (techBackground) {
+        const speed3 = scrollY * 0.1; // Capa de nodos (muy sutil)
+        techBackground.style.transform = `translate3d(0, ${speed3}px, 0)`;
+      }
+    }
+    
+    // Scroll suave mejorado con easing
+    function smoothScroll(target: Element, duration = 1000) {
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - 80; // Offset para navbar
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition;
+      let startTime: number | null = null;
+      
+      // Función de easing suave
+      function easeInOutCubic(t: number): number {
+        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+      }
+      
+      function animation(currentTime: number) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        const ease = easeInOutCubic(progress);
+        
+        window.scrollTo(0, startPosition + distance * ease);
+        
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        }
+      }
+      
+      requestAnimationFrame(animation);
+    }
+    
+    // Aplicar scroll suave a todos los enlaces de navegación
+    function initSmoothScrolling() {
+      const navLinks = document.querySelectorAll('a[href^="#"]');
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const href = link.getAttribute('href');
+          if (href && href !== '#') {
+            const target = document.querySelector(href);
+            if (target) {
+              smoothScroll(target as Element, isMobile ? 500 : 800); // Scroll más rápido en móviles
+            }
+          }
+        });
+      });
+    }
+    
+    // Solo aplicar parallax en escritorio
+    if (!isMobile) {
+      const throttledParallax = throttle(handleParallax, 16);
+      
+      window.addEventListener('scroll', () => {
+        throttledParallax();
+        
+        // Indicador de scroll activo
+        isScrolling = true;
+        document.body.style.setProperty('--scroll-indicator', '1');
+        
+        // Limpiar timer anterior
+        clearTimeout(scrollTimer);
+        
+        // Ocultar indicador después de que termine el scroll
+        scrollTimer = window.setTimeout(() => {
+          isScrolling = false;
+          document.body.style.setProperty('--scroll-indicator', '0');
+        }, 150);
+      });
+      
+      // Aplicar parallax inicial
+      handleParallax();
+    }
+    
+    // Inicializar scroll suave (tanto en móvil como escritorio)
+    initSmoothScrolling();
+
+    // === BOTÓN DE ACCESO ADMIN SIMPLIFICADO ===
+    
+    const adminAccessButton = document.getElementById('admin-access');
+    
+    // Event listener simple para el botón de acceso administrativo
+    if (adminAccessButton) {
+      adminAccessButton.addEventListener('click', (e) => {
+        // No prevenir default, permitir que el enlace funcione normalmente
+        // Solo agregar un pequeño efecto visual
+        adminAccessButton.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          adminAccessButton.style.transform = '';
+        }, 150);
+      });
+    }
+  });
+</script>

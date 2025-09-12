@@ -1,73 +1,163 @@
-<section id="contact" class="w-full py-12 border-t border-[#ffffff10]">
+<section id="contact" class="w-full py-12 border-t border-[#ffffff10] relative min-h-[500px]">
   <div class="max-w-5xl mx-auto">
-    <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">Let's talk</h2>
-    <h3 class="text-4xl md:text-5xl font-medium text-[var(--white)] mb-6">
-      Contact
-    </h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="text-[var(--white-icon)]">
-        <p class="mb-4">
-          Have a question or a project in mind? Feel free to reach out.
+    <div id="contact-header">
+      <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec" data-translate="contact.title">Hablemos</h2>
+      <h3 class="text-4xl md:text-5xl font-medium text-[var(--white)] mb-6" data-translate="contact.subtitle">
+        Contacto
+      </h3>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 min-h-[350px]" id="contact-content">
+      <div class="text-[var(--white-icon)]" id="contact-description">
+        <p class="mb-4 text-lg" data-translate="contact.description">
+          ¿Tienes una pregunta o un proyecto en mente? No dudes en contactarme.
         </p>
-        <div class="flex items-center gap-2">
-          <span>Location:</span>
-          <span class="text-[var(--white)]">Colombia, Valle del cauca</span>
-        </div>
+        <p class="mb-4 text-lg" data-translate="contact.additionalInfo">
+          Además puedes solicitar: acceso completo a mi portfolio con proyectos detallados o recomendaciones personalizadas de tecnologías para tu proyecto.
+        </p>
       </div>
 
       <div>
         <form
           id="contact-form"
-          action="https://formspree.io/f/mnnjznkj"
+          action="https://formspree.io/f/meogyvgk"
           method="POST"
-          class="flex flex-col gap-4"
+          class="flex flex-col gap-4 transition-all duration-500 ease-in-out"
         >
+          <input
+            type="hidden"
+            name="_to"
+            value="info@mauriciolavilla.net"
+          />
+          <input
+            type="hidden"
+            name="_subject"
+            value="Nuevo mensaje desde tu portfolio"
+          />
+          <input
+            type="hidden"
+            name="_cc"
+            value="info@mauriciolavilla.net"
+          />
           <input
             type="text"
             name="from_name"
-            placeholder="Name"
+            data-translate-placeholder="contact.form.name"
+            placeholder="Nombre"
             required
-            class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)]"
+            class="px-4 py-2 bg-[var(--card-bg)] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)]"
           />
           <input
             type="email"
             name="reply_to"
-            placeholder="Email"
+            data-translate-placeholder="contact.form.email"
+            placeholder="Correo electrónico"
             required
-            class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)]"
+            class="px-4 py-2 bg-[var(--card-bg)] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)]"
           />
           <textarea
             name="message"
-            placeholder="Message"
+            data-translate-placeholder="contact.form.message"
+            placeholder="Mensaje"
             rows="6"
             required
-            class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)] resize-none"
+            class="px-4 py-2 bg-[var(--card-bg)] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)] resize-none"
           ></textarea>
+          
           <button
             type="submit"
-            class="px-4 py-2 bg-[var(--white-icon-tr)] text-[var(--white)] rounded-lg opacity-60 transition-opacity border border-[var(--white-icon-tr)] hover:opacity-100 hover:bg-[var(--white-icon-tr)]"
+            id="submit-btn"
+            class="px-4 py-2 bg-[var(--white-icon-tr)] text-[var(--white)] rounded-lg opacity-60 transition-opacity border border-[var(--white-icon-tr)] hover:opacity-100 hover:bg-[var(--white-icon-tr)] disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
-            Submit
+            <span id="submit-text" data-translate="contact.form.send">Enviar</span>
+            <div id="loading-spinner" class="hidden">
+              <svg class="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+            </div>
           </button>
         </form>
-        <div
-          id="form-message"
-          class="hidden justify-center items-center mt-4 text-[var(--white)] text-lg"
-        >
-          ✅ Thank you for your message!
+        
+      </div>
+    </div>
+    
+    <!-- Mensaje de éxito centrado en el área del formulario -->
+    <div
+      id="form-message"
+      class="hidden opacity-0 transition-all duration-700 ease-in-out transform translate-y-8 absolute inset-0 flex items-center justify-center"
+    >
+      <div class="text-center">
+        <div class="flex items-center justify-center mb-4">
+          <svg class="w-16 h-16 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          </svg>
         </div>
+        <h3 class="text-4xl font-medium text-green-400 mb-4" data-translate="contact.form.success">¡Mensaje enviado!</h3>
+        <p class="text-[var(--white-icon)] text-xl" data-translate="contact.form.successDescription">Te responderé pronto.</p>
       </div>
     </div>
   </div>
 </section>
 
-<script type="module" is:inline>
+<script is:inline>
+  // Función para aplicar traducciones al contacto
+  function applyContactTranslations(language) {
+    // Obtener traducciones del objeto global
+    const translations = window.translations?.[language] || window.translations?.es;
+    
+    if (!translations) return;
+    
+    // Traducir elementos con data-translate
+    document.querySelectorAll('[data-translate]').forEach(element => {
+      const key = element.getAttribute('data-translate');
+      if (key && key.startsWith('contact.')) {
+        const translation = getNestedValue(translations, key);
+        if (translation) {
+          element.textContent = translation;
+        }
+      }
+    });
+
+    // Traducir placeholders
+    document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
+      const key = element.getAttribute('data-translate-placeholder');
+      if (key) {
+        const translation = getNestedValue(translations, key);
+        if (translation) {
+          element.placeholder = translation;
+        }
+      }
+    });
+  }
+
+  // Función para obtener valores anidados de un objeto
+  function getNestedValue(obj, path) {
+    return path.split('.').reduce((current, key) => current?.[key], obj);
+  }
+
+  // Aplicar traducciones iniciales
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLanguage = localStorage.getItem('selectedLanguage') || 'es';
+    applyContactTranslations(savedLanguage);
+  });
+
+  // Escuchar cambios de idioma
+  window.addEventListener('languageChanged', (event) => {
+    applyContactTranslations(event.detail.language);
+  });
+
   const form = document.getElementById("contact-form");
-  const formMessage = document.getElementById("form-message");
+  const submitText = document.getElementById("submit-text");
+  const loadingSpinner = document.getElementById("loading-spinner");
+  const contactHeader = document.getElementById("contact-header");
+  const contactContent = document.getElementById("contact-content");
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
+
+    submitText.classList.add("hidden");
+    loadingSpinner.classList.remove("hidden");
 
     try {
       const response = await fetch(form.action, {
@@ -75,18 +165,47 @@
         body: formData,
         headers: { Accept: "application/json" },
       });
+      
       if (response.ok) {
         form.reset();
-        form.style.display = "none";
-        formMessage.classList.remove("hidden");
+        
+        // Ocultar títulos y contenido del formulario
+        contactHeader.style.display = "none";
+        contactContent.style.display = "none";
+        
+        // Mostrar mensaje de éxito centrado
+        const messageDiv = document.getElementById('form-message');
+        if (messageDiv) {
+          messageDiv.classList.remove('hidden');
+          // Forzar un reflow antes de aplicar las transiciones
+          messageDiv.offsetHeight;
+          requestAnimationFrame(() => {
+            messageDiv.classList.remove('opacity-0', 'translate-y-8');
+            messageDiv.classList.add('opacity-100', 'translate-y-0');
+          });
+          
+          // Restaurar el formulario después de 5 segundos
+          setTimeout(() => {
+            messageDiv.classList.remove('opacity-100', 'translate-y-0');
+            messageDiv.classList.add('opacity-0', 'translate-y-8');
+            setTimeout(() => {
+              messageDiv.classList.add('hidden');
+              contactHeader.style.display = "block";
+              contactContent.style.display = "grid";
+            }, 700);
+          }, 5000);
+        }
       } else {
         const data = await response.json();
         console.error("Error response:", data);
-        alert("There was a problem sending your message.");
+        alert("Hubo un problema al enviar tu mensaje.");
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("There was a problem sending your message.");
+      alert("Hubo un problema al enviar tu mensaje.");
+    } finally {
+      loadingSpinner.classList.add("hidden");
+      submitText.classList.remove("hidden");
     }
   });
 </script>

@@ -1,34 +1,60 @@
 ---
-import LetterGlitch from "../React/LetterGlitch.tsx";
 import LogoWall from "../components/logoWall.astro";
-import SkillsList from "../React/SkillsList.tsx";
 ---
 
 <section class="text-[var(--white)] mt-12 md:mt-0" id="home">
-  <div class="max-w-5xl mx-auto space-y-8 md:py-36 pb-14">
+  <div class="max-w-5xl mx-auto space-y-8 md:py-16 pb-14">
     <div class="text-left">
-      <p class="text-md md:text-2xl text-[var(--white-icon)] shiny-white">
+      <p class="text-md md:text-2xl text-[var(--white-icon)] shiny-white" data-translate="home.name">
         Mauricio Lavilla
       </p>
-      <div class="flex flex-col lg:flex-row lg:items-center lg:space-y-0 lg:space-x-8 md:gap-4">
-        <h1 class="text-[var(--white)] text-5xl md:text-6xl font-medium text-pretty leading-none">
+      <div
+        class="flex flex-col lg:flex-row lg:items-center lg:space-y-0 lg:space-x-8 md:gap-4"
+      >
+        <h1
+          class="text-[var(--white)] text-5xl md:text-6xl font-medium text-pretty leading-none"
+          data-translate="home.role"
+        >
           Full Stack <br /> Developer
         </h1>
-        
-        <div class="flex flex-col space-y-4">
-          <p class="text-md md:text-2 md:text-xl text-[var(--white-icon)]">
-            Transformo ideas en sistemas inteligentes y escalables, fusionando diseño moderno con arquitecturas robustas para crear soluciones digitales que marcan la diferencia. 
+
+        <div class="flex flex-col space-y-4 pt-2">
+          <p class="text-md md:text-2 md:text-xl text-[var(--white-icon)]" data-translate="home.description1">
+            Transformo ideas en sistemas inteligentes y escalables, fusionando
+            diseño moderno con arquitecturas robustas para crear soluciones
+            digitales que marcan la diferencia.
           </p>
-          <p class="text-md md:text-xl text-[var(--white-icon)]">
-            Soy un apasionado por la tecnología y la innovación, siempre en busca de nuevos retos y oportunidades para crecer.
+          <p class="text-md md:text-xl text-[var(--white-icon)]" data-translate="home.description2">
+            Soy un apasionado por la tecnología y la innovación, siempre en
+            busca de nuevos retos y oportunidades para crecer.
           </p>
         </div>
       </div>
       <div class="flex justify-start gap-2 pt-3 md:pt-6">
-        <a target="_blank"
+        <a
+          target="_blank"
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=info@mauriciolavilla.net&su=Hola%20Mauricio!"
+          aria-label="Email"
+          class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[var(--card-bg)] hover:bg-[var(--white-icon-tr)]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="2.1em"
+            height="2.1em"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="m18.73 5.41l-1.28 1L12 10.46L6.55 6.37l-1.28-1A2 2 0 0 0 2 7.05v11.59A1.36 1.36 0 0 0 3.36 20h3.19v-7.72L12 16.37l5.45-4.09V20h3.19A1.36 1.36 0 0 0 22 18.64V7.05a2 2 0 0 0-3.27-1.64"
+            ></path>
+          </svg>
+        </a>
+        <a
+          target="_blank"
           href="https://github.com/progress19"
           aria-label="GitHub"
-          class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]" >
+          class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[var(--card-bg)] hover:bg-[var(--white-icon-tr)]"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -44,7 +70,7 @@ import SkillsList from "../React/SkillsList.tsx";
           target="_blank"
           href="https://www.linkedin.com/in/mauriciolavilla/"
           aria-label="LinkedIn"
-          class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+          class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[var(--card-bg)] hover:bg-[var(--white-icon-tr)]"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -57,46 +83,774 @@ import SkillsList from "../React/SkillsList.tsx";
             ></path>
           </svg>
         </a>
-        <a
-          target="_blank"
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=mauriciolav@gmail.com&su=Hola%20Mauricio!"
-          aria-label="Email"
-          class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="2.1em"
-            height="2.1em"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="currentColor"
-              d="m18.73 5.41l-1.28 1L12 10.46L6.55 6.37l-1.28-1A2 2 0 0 0 2 7.05v11.59A1.36 1.36 0 0 0 3.36 20h3.19v-7.72L12 16.37l5.45-4.09V20h3.19A1.36 1.36 0 0 0 22 18.64V7.05a2 2 0 0 0-3.27-1.64"
-            ></path>
-          </svg>
-        </a>
       </div>
     </div>
 
     <LogoWall />
 
-    <div class="flex flex-col lg:flex-row items-center gap-8">
+    <!-- Nueva sección: Desarrollo de Aplicaciones Web Avanzadas -->
+    <section class="py-16 border-t border-[#ffffff10]" id="services">
+      <div class="grid lg:grid-cols-[75%_25%] gap-12 items-center">
+        <!-- Columna izquierda (75%) - Contenido principal -->
+        <div class="space-y-8">
+          <div class="space-y-6">
+            <h2
+              class="text-3xl md:text-5xl lg:text-6xl font-bold text-[var(--white)] leading-tight"
+            >
+              <span data-translate="home.development.title">Desarrollo de</span>
+              <br />
+              <span class="text-[var(--sec)] shiny-sec" data-translate="home.development.subtitle">Aplicaciones Web</span>
+              <br />
+              <span
+                class="text-2xl md:text-4xl lg:text-5xl font-normal text-[var(--white-icon)]"
+                data-translate="home.development.category">Avanzadas</span>
+            </h2>
+
+            <div
+              class="space-y-6 text-lg md:text-xl text-[var(--white-icon)] leading-relaxed"
+            >
+              <p data-translate="home.development.description1">
+                Creo <span class="text-[var(--white)] font-medium"
+                  >sistemas inteligentes</span
+                > que simplifican procesos complejos y conectan personas con soluciones
+                prácticas.
+              </p>
+              <p data-translate="home.development.description2">
+                Mi enfoque está en desarrollar <span class="text-[var(--sec)]"
+                  >herramientas digitales</span
+                > que generen un <span class="text-[var(--white)] font-medium"
+                  >impacto positivo real</span
+                > en la vida de las personas y organizaciones.
+              </p>
+              <div
+                class="text-base md:text-lg bg-[var(--card-bg)] border border-[var(--white-icon-tr)] rounded-2xl p-6"
+              >
+                <p class="text-[var(--sec)] font-medium mb-2" data-translate="home.development.philosophy">Mi filosofía:</p>
+                <p class="text-[var(--white)]" data-translate="home.development.philosophyText">
+                  Tecnología + Propósito = Soluciones que importan
+                </p>
+              </div>
+            </div>
+
+            <!-- Lista de servicios específicos -->
+            <div class="pt-6">
+              <h3
+                class="text-xl md:text-2xl font-semibold text-[var(--white)] mb-4"
+                data-translate="home.development.servicesTitle"
+              >
+                Servicios especializados:
+              </h3>
+              <ul
+                class="space-y-3 text-[var(--white-icon)] text-base md:text-lg"
+                data-translate-list="home.development.services"
+              >
+                <li class="flex items-start">
+                  <span class="text-[var(--sec)] mr-3 mt-1">•</span>
+                  <span>
+                    Creación de sitios web dinámicos y personalizados, adaptados
+                    a tus necesidades.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[var(--sec)] mr-3 mt-1">•</span>
+                  <span>
+                    Soluciones de comercio electrónico con integración de
+                    pasarelas de pago (PayPal, Mercado Pago, Stripe).
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[var(--sec)] mr-3 mt-1">•</span>
+                  <span>
+                    Desarrollo de sistemas de reservas para cabañas,
+                    departamentos y otros servicios.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[var(--sec)] mr-3 mt-1">•</span>
+                  <span>
+                    Integración de APIs de terceros (Google Maps, OpenWeather,
+                    etc.).
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[var(--sec)] mr-3 mt-1">•</span>
+                  <span>
+                    Optimización de sitios web para SEO.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[var(--sec)] mr-3 mt-1">•</span>
+                  <span>
+                    Mantenimiento y actualización de sitios web existentes.
+                  </span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[var(--sec)] mr-3 mt-1">•</span>
+                  <span>
+                    Desarrollo de aplicaciones web progresivas (PWA).
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna derecha (25%) - Elemento visual animado -->
+        <div class="flex justify-center items-center h-full lg:flex">
+          <div
+            class="relative w-full max-w-xs aspect-square bg-gradient-to-br from-transparent to-transparent"
+          >
+            <!-- Formas fluidas que representan herramientas digitales -->
+
+            <!-- Forma 1: Rectángulo redondeado (código/editor) -->
+            <div
+              class="absolute top-1/4 left-1/3 w-8 h-5 bg-purple-400 opacity-50 rounded-md animate-float1"
+            >
+            </div>
+
+            <!-- Forma 2: Círculo (datos/conexión) -->
+            <div
+              class="absolute top-1/2 right-1/4 w-6 h-6 bg-white opacity-30 rounded-full animate-float2"
+            >
+            </div>
+
+            <!-- Forma 3: Cuadrado pequeño (módulo/componente) -->
+            <div
+              class="absolute top-1/6 right-1/2 w-4 h-4 bg-purple-300 opacity-40 rounded-sm animate-float3"
+            >
+            </div>
+
+            <!-- Forma 4: Línea ondulada (flujo de datos) -->
+            <div
+              class="absolute top-2/3 right-1/3 w-12 h-1 bg-purple-400 opacity-40 rounded-full animate-wave"
+            >
+            </div>
+
+            <!-- Forma 5: Elipse (proceso) -->
+            <div
+              class="absolute bottom-1/4 right-1/5 w-7 h-4 bg-white opacity-20 rounded-full animate-float4"
+            >
+            </div>
+
+            <!-- Partículas de conexión suaves -->
+            <div
+              class="absolute top-1/3 left-1/2 w-2 h-2 bg-purple-400 opacity-60 rounded-full animate-twinkle1"
+            >
+            </div>
+            <div
+              class="absolute bottom-1/2 left-2/3 w-1 h-1 bg-white opacity-50 rounded-full animate-twinkle2"
+            >
+            </div>
+            <div
+              class="absolute top-2/3 left-1/5 w-1 h-1 bg-purple-300 opacity-70 rounded-full animate-twinkle3"
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nueva sección: Diseño -->
+    <section class="py-16 border-t border-[#ffffff10]" id="design">
+      <div class="grid lg:grid-cols-[25%_75%] gap-12 items-center">
+        <!-- Columna izquierda (25%) - Elemento visual animado -->
+        <div class="flex justify-center items-center h-full order-2 lg:order-1">
+          <div
+            class="relative w-full max-w-xs aspect-square bg-gradient-to-br from-transparent to-transparent"
+          >
+            <!-- Formas fluidas que representan diseño y creatividad -->
+
+            <!-- Forma 1: Paleta de colores -->
+            <div
+              class="absolute top-1/5 left-1/4 w-10 h-6 bg-gradient-to-r from-purple-400 to-pink-300 opacity-60 rounded-lg animate-pulse"
+            >
+            </div>
+
+            <!-- Forma 2: Pincel/herramienta de diseño -->
+            <div
+              class="absolute top-1/3 right-1/3 w-2 h-12 bg-white opacity-40 rounded-full rotate-45 animate-bounce"
+            >
+            </div>
+
+            <!-- Forma 3: Ventana/frame de diseño -->
+            <div
+              class="absolute top-1/2 left-1/3 w-8 h-6 border-2 border-purple-300 opacity-50 rounded animate-ping"
+            >
+            </div>
+
+            <!-- Forma 4: Tipografía representada como líneas -->
+            <div class="absolute bottom-1/3 right-1/4 space-y-1 animate-pulse">
+              <div class="w-8 h-0.5 bg-purple-400 opacity-60 rounded-full">
+              </div>
+              <div class="w-6 h-0.5 bg-white opacity-40 rounded-full"></div>
+              <div class="w-10 h-0.5 bg-purple-300 opacity-50 rounded-full">
+              </div>
+            </div>
+
+            <!-- Forma 5: Elementos de interfaz -->
+            <div
+              class="absolute bottom-1/4 left-1/5 w-5 h-5 bg-purple-400 opacity-40 rounded-sm animate-spin"
+            >
+            </div>
+
+            <!-- Partículas creativas -->
+            <div
+              class="absolute top-1/6 right-1/2 w-1 h-1 bg-pink-300 opacity-70 rounded-full animate-ping"
+            >
+            </div>
+            <div
+              class="absolute bottom-1/2 left-2/3 w-2 h-2 bg-purple-400 opacity-50 rounded-full animate-pulse"
+            >
+            </div>
+            <div
+              class="absolute top-2/3 right-1/5 w-1 h-1 bg-white opacity-60 rounded-full animate-bounce"
+            >
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna derecha (75%) - Contenido principal -->
+        <div class="space-y-8 order-1 lg:order-2">
+          <div class="space-y-6">
+            <h2
+              class="text-3xl md:text-5xl lg:text-6xl font-bold text-[var(--white)] leading-tight"
+            >
+              <span class="block text-[var(--sec)] shiny-sec" data-translate="home.design.title">Diseño</span>
+              <span data-translate="home.design.subtitle">y Maquetación</span>
+              <span
+                class="block text-2xl md:text-4xl lg:text-5xl font-normal text-[var(--white-icon)]"
+                data-translate="home.design.category">Profesional</span>
+            </h2>
+
+            <div
+              class="space-y-6 text-lg md:text-xl text-[var(--white-icon)] leading-relaxed"
+            >
+              <p data-translate="home.design.description1">
+                Transformo conceptos en <span
+                  class="text-[var(--white)] font-medium"
+                  >experiencias visuales impactantes</span
+                > que comunican, conectan y convierten visitantes en clientes.
+              </p>
+              <p data-translate="home.design.description2">
+                Mi proceso combina <span class="text-[var(--sec)]"
+                  >creatividad estratégica</span
+                > con tecnología de vanguardia para crear interfaces que no solo
+                se ven bien, sino que <span
+                  class="text-[var(--white)] font-medium"
+                  >generan resultados reales</span
+                >.
+              </p>
+              <div
+                class="text-base md:text-lg bg-[var(--card-bg)] border border-[var(--white-icon-tr)] rounded-2xl p-6"
+              >
+                <p class="text-[var(--sec)] font-medium mb-2" data-translate="home.design.philosophy">Mi enfoque:</p>
+                <p class="text-[var(--white)]" data-translate="home.design.philosophyText">
+                  Diseño + Funcionalidad = Experiencias que cautivan
+                </p>
+              </div>
+            </div>
+
+            <!-- Lista de servicios específicos -->
+            <div class="pt-6">
+              <h3
+                class="text-xl md:text-2xl font-semibold text-[var(--white)] mb-4"
+                data-translate="home.design.servicesTitle"
+              >
+                Servicios de diseño:
+              </h3>
+              <ul
+                class="space-y-3 text-[var(--white-icon)] text-base md:text-lg"
+                data-translate-list="home.design.services"
+              >
+                <div class="flex items-start">
+                  <span class="text-[var(--sec)] pl-1 pt-1">•</span>
+                  <li class="pl-3" data-translate-item="0">
+                    Diseño web profesional utilizando las últimas tecnologías y
+                    frameworks.
+                  </li>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-[var(--sec)] pl-1 pt-1">•</span>
+                  <li class="pl-3" data-translate-item="1">
+                    Creación de interfaces de usuario (UI) y experiencias de
+                    usuario (UX) atractivas.
+                  </li>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-[var(--sec)] pl-1 pt-1">•</span>
+                  <li class="pl-3" data-translate-item="2">
+                    Maquetación de sitios web responsivos y accesibles.
+                  </li>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-[var(--sec)] pl-1 pt-1">•</span>
+                  <li class="pl-3" data-translate-item="3">
+                    Sistemas de diseño coherentes y escalables.
+                  </li>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-[var(--sec)] pl-1 pt-1">•</span>
+                  <li class="pl-3" data-translate-item="4">
+                    Prototipado interactivo y testing de usabilidad.
+                  </li>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-[var(--sec)] pl-1 pt-1">•</span>
+                  <li class="pl-3" data-translate-item="5">
+                    Animaciones y microinteracciones que mejoran la experiencia.
+                  </li>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nueva sección: Inteligencia Artificial -->
+    <section class="py-16 border-t border-[#ffffff10]" id="ai">
+      <div class="grid lg:grid-cols-[75%_25%] gap-12 items-center">
+        <!-- Columna izquierda (75%) - Contenido principal -->
+        <div class="space-y-8">
+          <div class="space-y-6">
+            <h2
+              class="text-3xl md:text-5xl lg:text-6xl font-bold text-[var(--white)] leading-tight"
+            >
+              <span class="block text-[var(--sec)] shiny-sec" data-translate="home.ai.title">Inteligencia</span>
+              <span data-translate="home.ai.subtitle">Artificial</span>
+              <span
+                class="block text-2xl md:text-4xl lg:text-5xl font-normal text-[var(--white-icon)]"
+                data-translate="home.ai.category">Aplicada</span>
+            </h2>
+
+            <div
+              class="space-y-6 text-lg md:text-xl text-[var(--white-icon)] leading-relaxed"
+            >
+              <p data-translate="home.ai.description1">
+                Desarrollo <span class="text-[var(--white)] font-medium"
+                  >soluciones inteligentes</span
+                > que aprovechan el poder de la IA para automatizar procesos y crear
+                experiencias personalizadas.
+              </p>
+              <p data-translate="home.ai.description2">
+                Mi enfoque combina <span class="text-[var(--sec)]"
+                  >machine learning</span
+                > con desarrollo web para crear aplicaciones que <span
+                  class="text-[var(--white)] font-medium"
+                  >aprenden y se adaptan</span
+                > a las necesidades específicas.
+              </p>
+              <div
+                class="text-base md:text-lg bg-[var(--card-bg)] border border-[var(--white-icon-tr)] rounded-2xl p-6"
+              >
+                <p class="text-[var(--sec)] font-medium mb-2" data-translate="home.ai.philosophy">Mi visión:</p>
+                <p class="text-[var(--white)]" data-translate="home.ai.philosophyText">
+                  IA + Creatividad = Soluciones que evolucionan
+                </p>
+              </div>
+            </div>
+
+            <!-- Lista de servicios específicos -->
+            <div class="pt-6">
+              <h3
+                class="text-xl md:text-2xl font-semibold text-[var(--white)] mb-4"
+                data-translate="home.ai.servicesTitle"
+              >
+                Servicios de IA:
+              </h3>
+              <ul
+                class="space-y-3 text-[var(--white-icon)] text-base md:text-lg"
+                data-translate-list="home.ai.services"
+              >
+                <div class="flex items-start">
+                  <span class="text-[var(--sec)] pl-1 pt-1">•</span>
+                  <li class="pl-3" data-translate-item="0">
+                    Integración de modelos de lenguaje para chatbots
+                    inteligentes.
+                  </li>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-[var(--sec)] pl-1 pt-1">•</span>
+                  <li class="pl-3" data-translate-item="1">
+                    Análisis de datos con Python y machine learning.
+                  </li>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-[var(--sec)] pl-1 pt-1">•</span>
+                  <li class="pl-3" data-translate-item="2">Automatización de procesos con IA.</li>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-[var(--sec)] pl-1 pt-1">•</span>
+                  <li class="pl-3" data-translate-item="3">
+                    Sistemas de recomendación personalizados.
+                  </li>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-[var(--sec)] pl-1 pt-1">•</span>
+                  <li class="pl-3" data-translate-item="4">Procesamiento de lenguaje natural (NLP).</li>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-[var(--sec)] pl-1 pt-1">•</span>
+                  <li class="pl-3" data-translate-item="5">
+                    Implementación de APIs de IA y aplicaciones predictivas.
+                  </li>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna derecha (25%) - Elemento visual animado -->
+        <div class="flex justify-center items-center h-full ">
+          <div
+            class="relative w-full max-w-xs aspect-square bg-gradient-to-br from-transparent to-transparent"
+          >
+            <!-- Formas fluidas que representan IA y algoritmos -->
+
+            <!-- Forma 1: Red neural -->
+            <div
+              class="absolute top-1/4 left-1/3 w-6 h-6 border-2 border-purple-400 opacity-50 rounded-full animate-pulse"
+            >
+              <div
+                class="absolute top-1/2 left-1/2 w-2 h-2 bg-purple-400 rounded-full transform -translate-x-1/2 -translate-y-1/2"
+              >
+              </div>
+            </div>
+
+            <!-- Forma 2: Conexiones neuronales -->
+            <div
+              class="absolute top-1/3 right-1/4 w-8 h-0.5 bg-white opacity-30 animate-pulse transform rotate-45"
+            >
+            </div>
+            <div
+              class="absolute top-1/2 right-1/3 w-6 h-0.5 bg-purple-300 opacity-40 animate-pulse transform -rotate-45"
+            >
+            </div>
+
+            <!-- Forma 3: Nodos de procesamiento -->
+            <div
+              class="absolute top-1/6 right-1/2 w-3 h-3 bg-purple-300 opacity-60 rounded-full animate-bounce"
+            >
+            </div>
+            <div
+              class="absolute bottom-1/3 left-1/4 w-4 h-4 bg-white opacity-40 rounded-full animate-ping"
+            >
+            </div>
+
+            <!-- Forma 4: Flujo de datos -->
+            <div
+              class="absolute top-2/3 right-1/3 w-10 h-1 bg-gradient-to-r from-purple-400 to-transparent opacity-50 rounded-full animate-pulse"
+            >
+            </div>
+
+            <!-- Forma 5: Algoritmo en acción -->
+            <div
+              class="absolute bottom-1/4 right-1/5 w-5 h-3 bg-purple-400 opacity-30 rounded animate-spin"
+            >
+            </div>
+
+            <!-- Partículas de procesamiento -->
+            <div
+              class="absolute top-1/5 right-1/6 w-1 h-1 bg-purple-400 opacity-70 rounded-full animate-twinkle1"
+            >
+            </div>
+            <div
+              class="absolute bottom-1/2 left-2/3 w-1 h-1 bg-white opacity-60 rounded-full animate-twinkle2"
+            >
+            </div>
+            <div
+              class="absolute top-2/3 left-1/6 w-2 h-2 bg-purple-300 opacity-50 rounded-full animate-twinkle3"
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nueva sección: Infraestructura -->
+    <section class="py-16 border-t border-[#ffffff10]" id="infrastructure">
+      <div class="grid lg:grid-cols-[25%_75%] gap-12 items-center">
+        <!-- Columna izquierda (25%) - Elemento visual animado -->
+        <div class="flex justify-center items-center h-full order-2 lg:order-1">
+          <div
+            class="relative w-full max-w-xs aspect-square bg-gradient-to-br from-transparent to-transparent"
+          >
+            <!-- Formas fluidas que representan infraestructura y servidores -->
+
+            <!-- Forma 1: Servidor/rack -->
+            <div
+              class="absolute top-1/4 left-1/3 w-8 h-12 bg-gradient-to-b from-purple-400 to-purple-600 opacity-50 rounded-lg animate-pulse"
+            >
+              <div
+                class="absolute top-2 left-1 w-1 h-1 bg-white opacity-80 rounded-full animate-ping"
+              >
+              </div>
+              <div
+                class="absolute top-4 left-1 w-1 h-1 bg-green-400 opacity-80 rounded-full"
+              >
+              </div>
+              <div
+                class="absolute top-6 left-1 w-1 h-1 bg-blue-400 opacity-80 rounded-full animate-pulse"
+              >
+              </div>
+            </div>
+
+            <!-- Forma 2: Nube/cloud -->
+            <div
+              class="absolute top-1/6 right-1/4 w-10 h-6 bg-white opacity-30 rounded-full animate-float1"
+            >
+              <div
+                class="absolute -top-1 left-2 w-4 h-4 bg-white opacity-40 rounded-full"
+              >
+              </div>
+              <div
+                class="absolute -top-1 right-2 w-3 h-3 bg-white opacity-40 rounded-full"
+              >
+              </div>
+            </div>
+
+            <!-- Forma 3: Base de datos -->
+            <div
+              class="absolute top-1/2 right-1/3 w-6 h-8 bg-purple-300 opacity-40 rounded-lg animate-bounce"
+            >
+              <div
+                class="absolute top-1 left-1 right-1 h-1 bg-white opacity-60 rounded-full"
+              >
+              </div>
+              <div
+                class="absolute top-3 left-1 right-1 h-1 bg-white opacity-40 rounded-full"
+              >
+              </div>
+              <div
+                class="absolute top-5 left-1 right-1 h-1 bg-white opacity-60 rounded-full"
+              >
+              </div>
+            </div>
+
+            <!-- Forma 4: Conexiones de red -->
+            <div
+              class="absolute bottom-1/3 left-1/5 w-12 h-0.5 bg-purple-400 opacity-50 animate-pulse transform rotate-12"
+            >
+            </div>
+            <div
+              class="absolute bottom-1/4 right-1/5 w-8 h-0.5 bg-white opacity-40 animate-pulse transform -rotate-12"
+            >
+            </div>
+
+            <!-- Forma 5: API/endpoint -->
+            <div
+              class="absolute bottom-1/5 left-1/2 w-4 h-4 border-2 border-purple-400 opacity-60 rounded animate-spin"
+            >
+            </div>
+
+            <!-- Partículas de datos -->
+            <div
+              class="absolute top-1/3 right-1/6 w-1 h-1 bg-green-400 opacity-70 rounded-full animate-ping"
+            >
+            </div>
+            <div
+              class="absolute bottom-1/2 left-2/3 w-1 h-1 bg-blue-400 opacity-60 rounded-full animate-bounce"
+            >
+            </div>
+            <div
+              class="absolute top-2/3 right-1/3 w-1 h-1 bg-purple-300 opacity-80 rounded-full animate-pulse"
+            >
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna derecha (75%) - Contenido principal -->
+        <div class="space-y-8 order-1 lg:order-2">
+          <div class="space-y-6">
+            <h2
+              class="text-3xl md:text-5xl lg:text-6xl font-bold text-[var(--white)] leading-tight"
+            >
+              <span class="block text-[var(--sec)] shiny-sec" data-translate="home.infrastructure.title">Infraestructura</span>
+              <span data-translate="home.infrastructure.subtitle">y DevOps</span>
+              <span
+                class="block text-2xl md:text-4xl lg:text-5xl font-normal text-[var(--white-icon)]"
+                data-translate="home.infrastructure.category">Escalable</span>
+            </h2>
+
+            <div
+              class="space-y-6 text-lg md:text-xl text-[var(--white-icon)] leading-relaxed"
+            >
+              <p data-translate="home.infrastructure.description1">
+                Construyo <span class="text-[var(--white)] font-medium"
+                  >arquitecturas robustas</span
+                > que garantizan que tus aplicaciones funcionen de manera óptima,
+                segura y escalable en cualquier momento.
+              </p>
+              <p data-translate="home.infrastructure.description2">
+                Mi experiencia abarca desde <span class="text-[var(--sec)]"
+                  >configuración de servidores</span
+                > hasta implementación de pipelines CI/CD que <span
+                  class="text-[var(--white)] font-medium"
+                  >automatizan y optimizan</span
+                > todo el ciclo de desarrollo.
+              </p>
+              <div
+                class="text-base md:text-lg bg-[var(--card-bg)] border border-[var(--white-icon-tr)] rounded-2xl p-6"
+              >
+                <p class="text-[var(--sec)] font-medium mb-2" data-translate="home.infrastructure.philosophy">
+                  Mi metodología:
+                </p>
+                <p class="text-[var(--white)]" data-translate="home.infrastructure.philosophyText">
+                  Automatización + Monitoreo = Sistemas confiables
+                </p>
+              </div>
+            </div>
+
+            <!-- Lista de servicios específicos -->
+            <div class="pt-6">
+              <h3
+                class="text-xl md:text-2xl font-semibold text-[var(--white)] mb-4"
+                data-translate="home.infrastructure.servicesTitle"
+              >
+                Servicios de infraestructura:
+              </h3>
+              <ul
+                class="space-y-3 text-[var(--white-icon)] text-base md:text-lg"
+                data-translate-list="home.infrastructure.services"
+              >
+                <div class="flex items-start">
+                  <span class="text-[var(--sec)] pl-1 pt-1">•</span>
+                  <li class="pl-3" data-translate-item="0">
+                    Configuración y administración de servidores Linux (Ubuntu,
+                    CentOS).
+                  </li>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-[var(--sec)] pl-1 pt-1">•</span>
+                  <li class="pl-3" data-translate-item="1">
+                    Despliegue en plataformas cloud (AWS, Google Cloud, Digital
+                    Ocean).
+                  </li>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-[var(--sec)] pl-1 pt-1">•</span>
+                  <li class="pl-3" data-translate-item="2">
+                    Implementación de contenedores Docker y orquestación.
+                  </li>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-[var(--sec)] pl-1 pt-1">•</span>
+                  <li class="pl-3" data-translate-item="3">
+                    Configuración de bases de datos MySQL, PostgreSQL y MongoDB.
+                  </li>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-[var(--sec)] pl-1 pt-1">•</span>
+                  <li class="pl-3" data-translate-item="4">
+                    Implementación de pipelines CI/CD con GitHub Actions.
+                  </li>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-[var(--sec)] pl-1 pt-1">•</span>
+                  <li class="pl-3" data-translate-item="5">
+                    Monitoreo, logs y alertas para garantizar uptime del 99.9%.
+                  </li>
+                </div>
+                <div class="flex items-start">
+                  <span class="text-[var(--sec)] pl-1 pt-1">•</span>
+                  <li class="pl-3" data-translate-item="6">
+                    Configuración de CDN y optimización de performance.
+                  </li>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección oculta -->
+    <!-- <div class="flex flex-col lg:flex-row items-center gap-8">
       <SkillsList client:load />
       <div
-        class="flex justify-center md:w-full md:h-[320px] size-[290px] pt-3 md:pt-9 md:ml-16"
+      class="flex justify-center md:w-full md:h-[320px] size-[290px] pt-3 md:pt-9 md:ml-16"
       >
-        <LetterGlitch
-          client:only
-          glitchColors={["#5e4491", "#A476FF", "#241a38"]}
-          glitchSpeed={3}
-          centerVignette={false}
-          outerVignette={true}
-          smooth={true}
-        />
+      <LetterGlitch
+        client:only
+        glitchColors={["#5e4491", "#A476FF", "#241a38"]}
+        glitchSpeed={3}
+        centerVignette={false}
+        outerVignette={true}
+        smooth={true}
+      />
       </div>
-    </div>
+    </div> -->
   </div>
 </section>
+
+<!-- Script para manejar las traducciones -->
+<script>
+  import { getTranslations } from '../translations.ts';
+
+  // Función para aplicar traducciones
+  function applyTranslations(language: string) {
+    const translations = getTranslations(language);
+    
+    // Traducir elementos con data-translate
+    document.querySelectorAll('[data-translate]').forEach(element => {
+      const key = element.getAttribute('data-translate');
+      if (key) {
+        const translation = getNestedValue(translations, key);
+        if (translation) {
+          element.textContent = translation;
+        }
+      }
+    });
+
+    // Traducir elementos individuales de listas con data-translate-item
+    document.querySelectorAll('[data-translate-item]').forEach(element => {
+      const parentList = element.closest('[data-translate-list]');
+      if (parentList) {
+        const listKey = parentList.getAttribute('data-translate-list');
+        const itemIndex = parseInt(element.getAttribute('data-translate-item') || '0');
+        
+        if (listKey) {
+          const translations_list = getNestedValue(translations, listKey);
+          if (Array.isArray(translations_list) && translations_list[itemIndex]) {
+            element.textContent = translations_list[itemIndex];
+          }
+        }
+      }
+    });
+
+    // Traducir listas con data-translate-list (para elementos que no tienen data-translate-item)
+    document.querySelectorAll('[data-translate-list]').forEach(element => {
+      const key = element.getAttribute('data-translate-list');
+      if (key) {
+        const translations_list = getNestedValue(translations, key);
+        if (Array.isArray(translations_list)) {
+          const listItems = element.querySelectorAll('li span:last-child');
+          listItems.forEach((item, index) => {
+            if (translations_list[index] && !item.closest('li').querySelector('[data-translate-item]')) {
+              item.textContent = translations_list[index];
+            }
+          });
+        }
+      }
+    });
+  }
+
+  // Función para obtener valores anidados de un objeto
+  function getNestedValue(obj: any, path: string) {
+    return path.split('.').reduce((current, key) => current?.[key], obj);
+  }
+
+  // Escuchar cambios de idioma
+  window.addEventListener('languageChanged', (event: any) => {
+    applyTranslations(event.detail.language);
+  });
+
+  // Aplicar traducciones iniciales
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLanguage = localStorage.getItem('selectedLanguage') || 'es';
+    applyTranslations(savedLanguage);
+  });
+</script>
 
 <style is:global>
   .shiny-sec {
@@ -115,6 +869,420 @@ import SkillsList from "../React/SkillsList.tsx";
     30%,
     70% {
       background-position: 0% 50%;
+    }
+  }
+
+  /* Animaciones fluidas para herramientas digitales */
+  .animate-float1 {
+    animation: float1 4s ease-in-out infinite;
+  }
+
+  .animate-float2 {
+    animation: float2 3.5s ease-in-out infinite 0.5s;
+  }
+
+  .animate-float3 {
+    animation: float3 4.5s ease-in-out infinite 2s;
+  }
+
+  .animate-float4 {
+    animation: float4 3.8s ease-in-out infinite 0.8s;
+  }
+
+  .animate-wave {
+    animation: wave 3s ease-in-out infinite 1.5s;
+  }
+
+  .animate-twinkle1 {
+    animation: twinkle 2s ease-in-out infinite;
+  }
+
+  .animate-twinkle2 {
+    animation: twinkle 2.5s ease-in-out infinite 0.7s;
+  }
+
+  .animate-twinkle3 {
+    animation: twinkle 3s ease-in-out infinite 1.2s;
+  }
+
+  /* Animaciones para diseño y maquetación */
+  .animate-design1 {
+    animation: design1 4s ease-in-out infinite;
+  }
+
+  .animate-design2 {
+    animation: design2 3.5s ease-in-out infinite 0.5s;
+  }
+
+  .animate-design3 {
+    animation: design3 4.5s ease-in-out infinite 2s;
+  }
+
+  .animate-design4 {
+    animation: design4 3.8s ease-in-out infinite 0.8s;
+  }
+
+  .animate-design5 {
+    animation: design5 3s ease-in-out infinite 1.5s;
+  }
+
+  .animate-sparkle1 {
+    animation: sparkle 2s ease-in-out infinite;
+  }
+
+  .animate-sparkle2 {
+    animation: sparkle 2.5s ease-in-out infinite 0.7s;
+  }
+
+  .animate-sparkle3 {
+    animation: sparkle 3s ease-in-out infinite 1.2s;
+  }
+
+  /* Animaciones para inteligencia artificial */
+  .animate-ai1 {
+    animation: ai1 4s ease-in-out infinite;
+  }
+
+  .animate-ai2 {
+    animation: ai2 3.5s ease-in-out infinite 0.5s;
+  }
+
+  .animate-ai3 {
+    animation: ai3 4.5s ease-in-out infinite 2s;
+  }
+
+  .animate-neural1 {
+    animation: neural1 3.8s ease-in-out infinite 0.8s;
+  }
+
+  .animate-neural2 {
+    animation: neural2 3s ease-in-out infinite 1.5s;
+  }
+
+  .animate-data-flow {
+    animation: data-flow 3.5s ease-in-out infinite;
+  }
+
+  .animate-processing {
+    animation: processing 4s ease-in-out infinite;
+  }
+
+  .animate-algorithm {
+    animation: algorithm 3.2s ease-in-out infinite;
+  }
+
+  .animate-ai-particle1 {
+    animation: ai-particle1 2s ease-in-out infinite;
+  }
+
+  .animate-ai-particle2 {
+    animation: ai-particle2 2.5s ease-in-out infinite 0.7s;
+  }
+
+  .animate-ai-particle3 {
+    animation: ai-particle3 3s ease-in-out infinite 1.2s;
+  }
+
+  @keyframes float1 {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) rotate(0deg);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translateY(-12px) translateX(8px) rotate(5deg);
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes float2 {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) scale(1);
+      opacity: 0.2;
+    }
+    50% {
+      transform: translateY(-15px) translateX(-10px) scale(1.2);
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes float3 {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) rotate(0deg);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translateY(-10px) translateX(-8px) rotate(180deg);
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes float4 {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) scaleX(1);
+      opacity: 0.2;
+    }
+    50% {
+      transform: translateY(-8px) translateX(-6px) scaleX(1.3);
+      opacity: 0.4;
+    }
+  }
+
+  @keyframes wave {
+    0%,
+    100% {
+      transform: translateY(0px) scaleX(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translateY(-6px) scaleX(1.2);
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes twinkle {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes design1 {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) rotate(0deg);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translateY(-10px) translateX(5px) rotate(10deg);
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes design2 {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) scale(1);
+      opacity: 0.2;
+    }
+    50% {
+      transform: translateY(-12px) translateX(-8px) scale(1.1);
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes design3 {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) rotate(0deg);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translateY(-8px) translateX(-6px) rotate(180deg);
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes design4 {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) scaleX(1);
+      opacity: 0.2;
+    }
+    50% {
+      transform: translateY(-6px) translateX(-4px) scaleX(1.2);
+      opacity: 0.4;
+    }
+  }
+
+  @keyframes design5 {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) rotate(0deg);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translateY(-4px) translateX(-2px) rotate(45deg);
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes sparkle {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes ai1 {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) rotate(0deg);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translateY(-10px) translateX(5px) rotate(10deg);
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes ai2 {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) scale(1);
+      opacity: 0.2;
+    }
+    50% {
+      transform: translateY(-12px) translateX(-8px) scale(1.1);
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes ai3 {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) rotate(0deg);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translateY(-8px) translateX(-6px) rotate(180deg);
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes neural1 {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) scaleX(1);
+      opacity: 0.2;
+    }
+    50% {
+      transform: translateY(-6px) translateX(-4px) scaleX(1.2);
+      opacity: 0.4;
+    }
+  }
+
+  @keyframes neural2 {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) rotate(0deg);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translateY(-4px) translateX(-2px) rotate(45deg);
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes data-flow {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) scale(1);
+      opacity: 0.2;
+    }
+    50% {
+      transform: translateY(-8px) translateX(-6px) scale(1.2);
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes processing {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) rotate(0deg);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translateY(-10px) translateX(8px) rotate(5deg);
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes algorithm {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) scale(1);
+      opacity: 0.2;
+    }
+    50% {
+      transform: translateY(-6px) translateX(-4px) scale(1.3);
+      opacity: 0.4;
+    }
+  }
+
+  @keyframes ai-particle1 {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes ai-particle2 {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes ai-particle3 {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes pulse-ai {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+  }
+
+  /* Ocultar las columnas de animaciones en dispositivos móviles */
+  @media (max-width: 1024px) {
+    /* Ocultar completamente los contenedores de animaciones en móvil */
+    .lg\\:grid-cols-\\[75\\%_25\\%\\] > div:last-child,
+    .lg\\:grid-cols-\\[25\\%_75\\%\\] > div:first-child {
+      display: none !important;
+    }
+    
+    /* Hacer que las secciones ocupen el 100% del ancho en móvil */
+    .lg\\:grid-cols-\\[75\\%_25\\%\\],
+    .lg\\:grid-cols-\\[25\\%_75\\%\\] {
+      grid-template-columns: 1fr !important;
     }
   }
 </style>

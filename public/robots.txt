@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://mauriciolavilla.net/sitemap.xml
+
+# Páginas principales
+Allow: /
+Allow: /recfis
+
+# Optimización para crawlers
+Crawl-delay: 1
+
+# Evitar crawling de archivos estáticos innecesarios
+Disallow: /_astro/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /dist/
+
+# Permitir indexación de páginas importantes
+Allow: /recfis
+Allow: /favicon.png
+Allow: /og-image.jpg

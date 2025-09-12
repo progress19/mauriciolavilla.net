@@ -1,0 +1,125 @@
+---
+// ScrollToTop.astro - Componente de scroll to top minimalista y dark
+---
+
+<button 
+  id="scroll-to-top"
+  class="fixed bottom-6 right-6 w-12 h-12 bg-[var(--card-bg)] border border-[var(--white-icon-tr)] rounded-full hover:bg-[var(--white-icon-tr)] hover:border-[var(--sec)] text-[var(--white-icon)] hover:text-[var(--sec)] transition-all duration-300 ease-in-out z-50 opacity-0 invisible translate-y-4 backdrop-blur-sm shadow-lg hover:shadow-[var(--sec)]/20"
+  data-translate-aria="scrollToTop.ariaLabel"
+  data-translate-title="scrollToTop.title"
+  aria-label="Volver arriba"
+  title="Volver arriba"
+>
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    stroke-width="2" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+    class="w-6 h-6 mx-auto"
+  >
+    <path d="m18 15-6-6-6 6"/>
+  </svg>
+</button>
+
+<style>
+  /* Animación para mostrar/ocultar el botón */
+  .show-scroll-btn {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Efecto de pulsación sutil */
+  #scroll-to-top:active {
+    transform: scale(0.95);
+  }
+
+  /* Animación suave del ícono */
+  #scroll-to-top:hover svg {
+    transform: translateY(-1px);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  /* Efecto de glow sutil en hover */
+  #scroll-to-top:hover {
+    box-shadow: 0 0 20px rgba(164, 118, 255, 0.3);
+  }
+</style>
+
+<script>
+  import { getTranslations } from '../translations.ts';
+
+  // Función para aplicar traducciones al scroll to top
+  function applyScrollToTopTranslations(language: string) {
+    const translations = getTranslations(language);
+    const button = document.getElementById('scroll-to-top');
+    
+    if (button) {
+      const ariaLabelKey = button.getAttribute('data-translate-aria');
+      const titleKey = button.getAttribute('data-translate-title');
+      
+      if (ariaLabelKey) {
+        const ariaTranslation = getNestedValue(translations, ariaLabelKey);
+        if (ariaTranslation) {
+          button.setAttribute('aria-label', ariaTranslation);
+        }
+      }
+      
+      if (titleKey) {
+        const titleTranslation = getNestedValue(translations, titleKey);
+        if (titleTranslation) {
+          button.setAttribute('title', titleTranslation);
+        }
+      }
+    }
+  }
+
+  // Función para obtener valores anidados de un objeto
+  function getNestedValue(obj: any, path: string) {
+    return path.split('.').reduce((current, key) => current?.[key], obj);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const scrollToTopBtn = document.getElementById('scroll-to-top');
+    
+    if (!scrollToTopBtn) return;
+
+    // Aplicar traducciones iniciales
+    const savedLanguage = localStorage.getItem('selectedLanguage') || 'es';
+    applyScrollToTopTranslations(savedLanguage);
+
+    // Escuchar cambios de idioma
+    window.addEventListener('languageChanged', (event: any) => {
+      applyScrollToTopTranslations(event.detail.language);
+    });
+
+    // Mostrar/ocultar botón basado en el scroll
+    const toggleScrollButton = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      
+      if (scrollTop > 300) {
+        scrollToTopBtn.classList.add('show-scroll-btn');
+      } else {
+        scrollToTopBtn.classList.remove('show-scroll-btn');
+      }
+    };
+
+    // Función de scroll suave al top
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    };
+
+    // Event listeners
+    window.addEventListener('scroll', toggleScrollButton, { passive: true });
+    scrollToTopBtn.addEventListener('click', scrollToTop);
+
+    // Verificar posición inicial
+    toggleScrollButton();
+  });
+</script>
